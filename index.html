@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Farming Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .title-header {
+      background: #28a745;
+      color: white;
+      padding: 1.5rem 0;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+
+    .card-body i {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .card-body h6 {
+      min-height: 40px; /* bikin konsisten kalau ada 2 baris */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="container">
+    <div class="title-header">
+      <h1 class="mb-0">Smart Farming Dashboard</h1>
+      <p class="lead mb-0">Pantau kondisi lingkungan pertanian secara real-time</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+      <!-- Kelembaban -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-tint text-primary"></i>
+            <h6>Kelembaban (RH)</h6>
+            <p class="fs-5 fw-bold mb-1">54%</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:54%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TDS -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-water text-success"></i>
+            <h6>TDS</h6>
+            <p class="fs-5 fw-bold mb-1">400 ppm</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:40%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kekeruhan -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-eye-slash text-warning"></i>
+            <h6>Kekeruhan (Turbid)</h6>
+            <p class="fs-5 fw-bold mb-1">18 NTU</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:18%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temperatur Air -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-thermometer-half text-danger"></i>
+            <h6>Temperatur Air (WTemp)</h6>
+            <p class="fs-5 fw-bold mb-1">25 °C</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:25%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aliran Air -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-water text-info"></i>
+            <h6>Aliran Air (WFlow)</h6>
+            <p class="fs-5 fw-bold mb-1">34</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:34%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oksigen Terlarut -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-wind text-secondary"></i>
+            <h6>Oksigen Terlarut (DO)</h6>
+            <p class="fs-5 fw-bold mb-1">10 ppm</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:10%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intensitas Cahaya -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-sun text-primary"></i>
+            <h6>Intensitas Cahaya (Lux)</h6>
+            <p class="fs-5 fw-bold mb-1">100 Lux</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temperatur Udara -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-thermometer-full text-success"></i>
+            <h6>Temperatur Udara (AmTemp)</h6>
+            <p class="fs-5 fw-bold mb-1">34 °C</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:34%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EC -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-bolt text-warning"></i>
+            <h6>EC</h6>
+            <p class="fs-5 fw-bold mb-1">2</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:20%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pH -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-center">
+            <i class="fas fa-flask text-danger"></i>
+            <h6>pH</h6>
+            <p class="fs-5 fw-bold mb-1">7.1</p>
+            <div class="progress">
+              <div class="progress-bar bg-primary" style="width:71%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
